@@ -5,14 +5,14 @@ project:
     port: 3333
 
 website:
-  title: "MUSA 550 Quarto Template"
+  title: "MUSA 550 Fall 2023 Final Project"
   site-url: "https://Cyanhang.github.io/MUSA550_Fall2023_Final_Project" 
   repo-url: "Cyanhang.github.io/MUSA550_Fall2023_Final_Project"
   repo-actions: [source]
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-Nick Hand, 2023"
+    left: "&copy; CC-Hang Zhao, Yahao Chen, Ling Chen, 2023"
 
   sidebar:
     logo: "images/course-icon.png"
@@ -20,15 +20,12 @@ website:
     align: center
     tools: 
       - icon: globe
-        href: https://nickhand.dev
-        text: "Personal Website"
+        href: https://musa-550-fall-2023.github.io/
+        text: "Course Website"
       - icon: github
         href: https://github.com/MUSA-550-Fall-2023/
         text: "MUSA 550 GitHub"
-      - icon: twitter
-        href: https://twitter.com/nicholashand
-        text: "Nick Hand Twitter"         
-
+      
     style: "docked"
     search: true
     collapse-level: 2

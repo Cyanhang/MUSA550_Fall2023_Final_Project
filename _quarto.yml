@@ -6,8 +6,8 @@ project:
 
 website:
   title: "MUSA 550 Quarto Template"
-  site-url: "https://musa-550-fall-2023.github.io/quarto-website-template" 
-  repo-url: https://github.com/MUSA-550-Fall-2023/quarto-website-template 
+  site-url: "https://Cyanhang.github.io/MUSA550_Fall2023_Final_Project" 
+  repo-url: "Cyanhang.github.io/MUSA550_Fall2023_Final_Project"
   repo-actions: [source]
 
   page-footer:

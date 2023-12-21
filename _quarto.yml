@@ -12,7 +12,7 @@ website:
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-Hang Zhao Yahao Chen Ling Chen, 2023"
+    left: "&copy; CC-Hang Zhao George Chen Ling Chen, 2023"
 
   sidebar:
     logo: "images/course-icon.png"
@@ -36,9 +36,9 @@ website:
       - section: analysis/index.qmd
         contents:
           - analysis/1-python-code-blocks.qmd 
-          - analysis/2-Final Project_Explore.ipynb
-          - analysis/3-Pop_Road_Zoning.ipynb
-          - analysis/4-HK_Temp_NDVI.ipynb
+          - analysis/2-Final-Project-Explore.ipynb
+          - analysis/3-Pop-Road-Zoning.ipynb
+          - analysis/4-HK-Temp-NDVI.ipynb
 
 format:
   html:

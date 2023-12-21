@@ -35,10 +35,11 @@ website:
       - about.qmd
       - section: analysis/index.qmd
         contents:
-          - analysis/1-python-code-blocks.qmd 
+          - analysis/1-HK-Topography.ipynb 
           - analysis/2-Final-Project-Explore.ipynb
-          - analysis/3-Pop-Road-Zoning.ipynb
-          - analysis/4-HK-Temp-NDVI.ipynb
+          - analysis/3-Building.ipynb
+          - analysis/4-Pop-Road-Zoning.ipynb
+          - analysis/5-HK-Temp-NDVI.ipynb
 
 format:
   html:

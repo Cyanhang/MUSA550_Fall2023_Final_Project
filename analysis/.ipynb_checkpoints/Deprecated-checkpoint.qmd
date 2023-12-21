@@ -1,0 +1,29 @@
+---
+title: "Hong Kong Topography Map"
+format:
+  html:
+    code-fold: true
+---
+
+
+
+A demonstration of a topography map for Hong Kong
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "Topography Visualization"
+
+import xarray as xr
+import hvplot.xarray
+import hvplot.pandas
+import rasterio as rio
+import rioxarray
+
+topo_url = (
+    "https://www.landsd.gov.hk/landsd_psi_data/SMO/image/B200K_R500index-geo.tif")
+topo_data = xr.open_dataset(topo_url, engine="rasterio")
+
+topo_map = topo_data.hvplot.image('x', 'y', width=700, height=500, cmap="copper", geo=True)
+
+topo_map
+```

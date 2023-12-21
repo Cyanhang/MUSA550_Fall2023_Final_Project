@@ -1,11 +1,7 @@
 # Analysis
 
-This section includes examples of technical analysis done using Jupyter notebooks.
-Each sub-section highlights different types of analyses and visualizations.
-In particular, it highlights that we can easily publish interactive visualizations
-produced with packages such as hvPlot, altair, or Folium, without losing
-any of the interactive features. 
+This comprehensive section encompasses the entirety of our project, which is divided into five distinct parts. The initial four segments delve into an in-depth exploratory and thematic analysis, focusing on various aspects of Hong Kong. These include its geographical characteristics, trends in precipitation and temperature, as well as an examination of building and population densities. Additionally, the analysis extends to the study of street density and the distribution of open spaces within the region.
 
-On this page, you might want to share more introductory or background information about 
-the analyses to help guide the reader. 
+The culminating segment of our project is centered on our principal investigation: the urban heat island effect. This involves the acquisition of Landsat 8 satellite imagery to observe and analyze temperature variations and NDVI (Normalized Difference Vegetation Index) changes over recent years. This crucial segment of our study culminates in a detailed cluster analysis. This analysis is instrumental in identifying which districts in Hong Kong exhibit similarities and demonstrate greater resilience to the challenges posed by urban heat and extreme weather conditions in the future.
+
 

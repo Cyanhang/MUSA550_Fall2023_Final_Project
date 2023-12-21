@@ -12,7 +12,7 @@ website:
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-Hang Zhao Yahao Chen Ling Chen, 2023"
+    left: "&copy; CC-Hang Zhao, Yahao Chen, Ling Chen, 2023"
 
   sidebar:
     logo: "images/course-icon.png"

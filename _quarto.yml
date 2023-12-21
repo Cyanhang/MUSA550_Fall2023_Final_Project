@@ -36,9 +36,9 @@ website:
       - section: analysis/index.qmd
         contents:
           - analysis/1-python-code-blocks.qmd 
-          - analysis/2-static-images.ipynb
-          - analysis/3-altair-hvplot.ipynb
-          - analysis/4-folium.ipynb
+          - analysis/2-Final Project_Explore.ipynb
+          - analysis/3-Pop_Road_Zoning.ipynb
+          - analysis/4-HK_Temp_NDVI.ipynb
 
 format:
   html:

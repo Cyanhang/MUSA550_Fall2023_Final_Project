@@ -15,7 +15,7 @@ website:
     left: "&copy; CC-Hang Zhao George Chen Ling Chen, 2023"
 
   sidebar:
-    logo: "images/course-icon.png"
+    logo: "images/HK_Map.png"
     pinned: true
     align: center
     tools: 

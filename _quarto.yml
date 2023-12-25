@@ -12,7 +12,7 @@ website:
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-Hang Zhao George Chen Ling Chen, 2023"
+    left: "&copy; CC-Hang Zhao, George Chen, Ling Chen, 2023"
 
   sidebar:
     logo: "images/HK_Map.png"
@@ -23,15 +23,15 @@ website:
         href: https://musa-550-fall-2023.github.io/
         text: "Course Website"
       - icon: github
-        href: https://github.com/MUSA-550-Fall-2023/
-        text: "MUSA 550 GitHub"
+        href: https://github.com/Cyanhang/MUSA550_Fall2023_Final_Project
+        text: "Project GitHub"
       
     style: "docked"
     search: true
     collapse-level: 2
     contents:
       - href: index.qmd
-        text: Welcome
+        text: Introduction
       - about.qmd
       - section: analysis/index.qmd
         contents:

@@ -17,9 +17,9 @@ title: "Group member"
 Our group is dedicated to exploring the themes of climate change and urban resilience, with a particular emphasis on Hong Kong. This historically rich and prosperous harbor city, renowned as a global financial hub, is situated in Southern China. Our focus centers on understanding and addressing the unique environmental and urban challenges faced by this vibrant metropolis. 
 
 **Group member:**
-Hang Zhao, Master of Environmental Studies, University of Pennsylvania
-George Chen, Master of Environmental Studies, University of Pennsylvania
-Ling Chen, Master of City Planning, University of Pennsylvania
+- Hang Zhao, Master of Environmental Studies, University of Pennsylvania
+- George Chen, Master of Environmental Studies, University of Pennsylvania
+- Ling Chen, Master of City Planning, University of Pennsylvania
 
 
 This site is our final project site showing several exploratory analysis, raster data processing, big data analysis, and clustering, which is part of the final project for [MUSA 550](https://musa-550-fall-2023.github.io/), during fall 2023. 

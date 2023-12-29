@@ -824,25 +824,19 @@ if (window.Jupyter !== undefined) {
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>hk_limit <span class="op">=</span> gpd.read_file(district_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-tags="[]">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pop_raw <span class="op">=</span> pop_raw.drop(pop_raw.columns[[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">7</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div class="cell" data-tags="[]" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_raw.hvplot(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"Population_Density"</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">600</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">600</span>, </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"Oranges"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    hover_cols<span class="op">=</span>[<span class="st">"District"</span>],</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    tiles<span class="op">=</span><span class="st">"CartoLight"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pop_raw.hvplot(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"Population_Density"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">600</span>, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"Oranges"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    hover_cols<span class="op">=</span>[<span class="st">"District"</span>],</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    tiles<span class="op">=</span><span class="st">"CartoLight"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -920,46 +914,13 @@ if (window.Jupyter !== undefined) {
 </section>
 <section id="hong-kong-rainfall" class="level3">
 <h3 class="anchored" data-anchor-id="hong-kong-rainfall">2. Hong Kong Rainfall</h3>
-<div class="cell" data-tags="[]" data-execution_count="17">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rain_url <span class="op">=</span> (</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_RF_ALL.csv"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>rain_raw <span class="op">=</span> pd.read_csv(rain_url, skiprows<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="19">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rain_raw <span class="op">=</span> rain_raw.drop([i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">36100</span>)],axis<span class="op">=</span><span class="dv">0</span>).dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="20">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rain_raw[<span class="st">'數值/Value'</span>]<span class="op">=</span>pd.to_numeric(rain_raw[<span class="st">'數值/Value'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> rain_raw.groupby(by<span class="op">=</span>[<span class="st">"年/Year"</span>], dropna<span class="op">=</span><span class="va">True</span>, as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">"數值/Value"</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="22">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>rain.rename(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'年/Year'</span>:<span class="st">'Year'</span>, <span class="st">'數值/Value'</span>:<span class="st">'max_rainfall'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<p>We aim to next examine the total annual rainfall in the Hong Kong area over the past thirty years. Situated in a region prone to tropical cyclones and substantial rainfall, Hong Kong experiences a predominantly rainy climate. This consistent exposure to heavy precipitation significantly elevates the risks of flooding and inundation.</p>
 <div class="cell" data-tags="[]" data-execution_count="23">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rain_bar <span class="op">=</span> rain.hvplot.bar(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'max_rainfall'</span>, rot<span class="op">=</span><span class="dv">90</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">"aquamarine"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>rain_line <span class="op">=</span> rain.hvplot(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'max_rainfall'</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>rain_bar<span class="op">*</span>rain_line</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rain_bar <span class="op">=</span> rain.hvplot.bar(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'max_rainfall'</span>, rot<span class="op">=</span><span class="dv">90</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">"aquamarine"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rain_line <span class="op">=</span> rain.hvplot(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'max_rainfall'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>rain_bar<span class="op">*</span>rain_line</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -1033,68 +994,45 @@ if (window.Jupyter !== undefined) {
 })(window);</script>
 </div>
 </div>
+<p>The bar and line chart illustrates that precipitation levels in Hong Kong have remained relatively consistent over time, with occasional spikes attributed to regional extreme weather events. On average, there has not been a significant increase in total annual rainfall in the area.</p>
 </section>
 <section id="temperature" class="level3">
 <h3 class="anchored" data-anchor-id="temperature">3. Temperature</h3>
+<p>We next delve into an overview of the annual temperature trends, offering a concise preliminary examination that will be elaborated upon in the ‘Urban Heat Island’ section. In this analysis, we focus on three key metrics: the annual maximum temperature, minimum temperature, and mean temperature.</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>temp_url <span class="op">=</span> (</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMAXT&amp;rformat=csv&amp;station=HKO"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>temp_raw <span class="op">=</span> pd.read_csv(temp_url, skiprows<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>temp_new <span class="op">=</span> temp_raw.drop([i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">36160</span>)],axis<span class="op">=</span><span class="dv">0</span>).dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>temp_new.rename(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'年/Year'</span>:<span class="st">'Year'</span>, <span class="st">'數值/Value'</span>:<span class="st">'temp'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>temp_new[<span class="st">'temp'</span>]<span class="op">=</span>pd.to_numeric(temp_new[<span class="st">'temp'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>temp_url <span class="op">=</span> (</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMAXT&amp;rformat=csv&amp;station=HKO"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>temp_raw <span class="op">=</span> pd.read_csv(temp_url, skiprows<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>temp_data <span class="op">=</span> temp_new.groupby(<span class="st">'Year'</span>, dropna<span class="op">=</span><span class="va">True</span>, as_index<span class="op">=</span><span class="va">False</span>).agg({</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temp'</span>: [<span class="st">'max'</span>, <span class="st">'min'</span>, <span class="st">'mean'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>temp_data.columns <span class="op">=</span> [col[<span class="dv">0</span>] <span class="cf">if</span> col[<span class="dv">1</span>] <span class="op">==</span> <span class="st">''</span> <span class="cf">else</span> <span class="st">'_'</span>.join(col) <span class="cf">for</span> col <span class="kw">in</span> temp_data.columns]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>temp_data <span class="op">=</span> temp_new.groupby(<span class="st">'Year'</span>, dropna<span class="op">=</span><span class="va">True</span>, as_index<span class="op">=</span><span class="va">False</span>).agg({</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temp'</span>: [<span class="st">'max'</span>, <span class="st">'min'</span>, <span class="st">'mean'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Select widget with options for 'temp_max', 'temp_min', 'temp_mean'</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>select_widget <span class="op">=</span> pn.widgets.Select(name<span class="op">=</span><span class="st">'Temperature Metric'</span>, options<span class="op">=</span>[<span class="st">'temp_max'</span>, <span class="st">'temp_min'</span>, <span class="st">'temp_mean'</span>])</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function that creates an hvplot based on the selected metric</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_temperature_plot(metric):</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> temp_data.hvplot.line(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span>metric, height<span class="op">=</span><span class="dv">400</span>, width<span class="op">=</span><span class="dv">700</span>, title<span class="op">=</span><span class="ss">f'Yearly Temperature (</span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss">)'</span>, rot<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Bind the plot function to the widget</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>dynamic_plot <span class="op">=</span> pn.bind(create_temperature_plot, metric<span class="op">=</span>select_widget)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Panel layout with the widget and the bound plot</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> pn.Column(select_widget, dynamic_plot)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># If running in a Jupyter notebook, display the Panel layout using:</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>layout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Select widget with options for 'temp_max', 'temp_min', 'temp_mean'</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>select_widget <span class="op">=</span> pn.widgets.Select(name<span class="op">=</span><span class="st">'Temperature Metric'</span>, options<span class="op">=</span>[<span class="st">'temp_max'</span>, <span class="st">'temp_min'</span>, <span class="st">'temp_mean'</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function that creates an hvplot based on the selected metric</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_temperature_plot(metric):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> temp_data.hvplot.line(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span>metric, height<span class="op">=</span><span class="dv">400</span>, width<span class="op">=</span><span class="dv">700</span>, title<span class="op">=</span><span class="ss">f'Yearly Temperature (</span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss">)'</span>, rot<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Bind the plot function to the widget</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>dynamic_plot <span class="op">=</span> pn.bind(create_temperature_plot, metric<span class="op">=</span>select_widget)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Panel layout with the widget and the bound plot</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> pn.Column(select_widget, dynamic_plot)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># If running in a Jupyter notebook, display the Panel layout using:</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>layout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -1171,6 +1109,7 @@ if (window.Jupyter !== undefined) {
 })(window);</script>
 </div>
 </div>
+<p>Analyzing the graph spanning from 1990 to 2023, we observe a clear upward trend in temperatures, indicating a general increase over time. This pattern suggests that Hong Kong is not immune to the effects of global climate change, which appears to be contributing to progressively warmer conditions in the region. Furthermore, the rapid urbanization of Hong Kong is likely exacerbating this warming trend. To understand this phenomenon in greater depth, we will conduct a thorough analysis and evaluation of the Urban Heat Island effect across various regions in Hong Kong.</p>
 
 
 </section>

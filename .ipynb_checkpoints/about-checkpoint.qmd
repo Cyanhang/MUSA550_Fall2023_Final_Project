@@ -9,7 +9,6 @@ title: "Group member"
 ::: {.g-col-4}
 ![](images/Hang_pic.jpg){width=3in}
 ![](images/George_pic.jpg){width=3in}
-![](images/Ling_pic.jpg){width=3in}
 :::
 
 <!-- Text gets a column with width 8/12 -->
